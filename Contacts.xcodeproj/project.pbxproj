@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57B4E0BC2836667B00745A98 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B4E0BB2836667B00745A98 /* Contact.swift */; };
 		57F5BAD7283623C3007DE090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5BAD6283623C3007DE090 /* AppDelegate.swift */; };
 		57F5BAD9283623C3007DE090 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5BAD8283623C3007DE090 /* SceneDelegate.swift */; };
 		57F5BADB283623C3007DE090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5BADA283623C3007DE090 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57B4E0BB2836667B00745A98 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		57F5BAD3283623C3007DE090 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F5BAD6283623C3007DE090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57F5BAD8283623C3007DE090 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57B4E0BA2836665C00745A98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57B4E0BB2836667B00745A98 /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		57F5BACA283623C3007DE090 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 			children = (
 				57F5BAD6283623C3007DE090 /* AppDelegate.swift */,
 				57F5BAD8283623C3007DE090 /* SceneDelegate.swift */,
+				57B4E0BA2836665C00745A98 /* Model */,
 				57F5BADA283623C3007DE090 /* ViewController.swift */,
 				57F5BADC283623C3007DE090 /* Main.storyboard */,
 				57F5BADF283623C7007DE090 /* Assets.xcassets */,
@@ -138,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B4E0BC2836667B00745A98 /* Contact.swift in Sources */,
 				57F5BADB283623C3007DE090 /* ViewController.swift in Sources */,
 				57F5BAD7283623C3007DE090 /* AppDelegate.swift in Sources */,
 				57F5BAD9283623C3007DE090 /* SceneDelegate.swift in Sources */,
