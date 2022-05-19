@@ -9,13 +9,36 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var contacts: [ContactProtocol] = []
+    @IBOutlet var tableView: UITableView!
+    var contacts: [ContactProtocol] = [] {
+        didSet {
+            contacts.sort{ $0.title < $1.title }
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadContacts()
     }
-
+    
+    
+    // alert with fields for adding new contact in contacts
+    @IBAction func showAddContactAlert() {
+        let alert = UIAlertController(title: "New contact", message: nil, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        let doneAction = UIAlertAction(title: "Done", style: .default) {_ in
+            guard let title = alert.textFields?[0].text else { return }
+            guard let phone = alert.textFields?[1].text else { return }
+            self.contacts.append(Contact(title: title, phone: phone))
+            self.tableView.reloadData()
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(doneAction)
+        alert.addTextField { $0.placeholder = "Jhon D..." }
+        alert.addTextField { $0.placeholder = "+380..." }
+        self.present(alert, animated: true)
+    }
     
     // test data
     private func loadContacts() {
@@ -23,7 +46,6 @@ class ViewController: UIViewController {
         contacts.append(Contact(title: "Владимир Анатольевич", phone: "+781213342321"))
         contacts.append(Contact(title: "Сильвестр Сталонович", phone: "+380674975199"))
         contacts.append(Contact(title: "Шварц Арнольдович", phone: "+380974389524"))
-        contacts.sort{ $0.title < $1.title }
     }
 }
 

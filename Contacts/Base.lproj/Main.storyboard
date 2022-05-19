@@ -17,27 +17,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Y49-mf-uWc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="bAQ-MY-nZL"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="9ps-ML-BkG"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dID-ae-hHS">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ngX-HX-IcT"/>
+                                    <barButtonItem title="Add contact" id="VWM-iB-ghy">
+                                        <connections>
+                                            <action selector="showAddContactAlert" destination="BYZ-38-t0r" id="4fB-PB-Doj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Y49-mf-uWc" secondAttribute="bottom" id="3kI-Kb-JY5"/>
                             <constraint firstItem="Y49-mf-uWc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Hie-QB-yWy"/>
                             <constraint firstItem="Y49-mf-uWc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HqI-fR-eP7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dID-ae-hHS" secondAttribute="trailing" id="JDh-Ei-Scb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y49-mf-uWc" secondAttribute="trailing" id="Lfj-q9-fhf"/>
+                            <constraint firstItem="dID-ae-hHS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cvK-uO-fSD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dID-ae-hHS" secondAttribute="bottom" id="r4X-H3-Bg3"/>
+                            <constraint firstItem="dID-ae-hHS" firstAttribute="top" secondItem="Y49-mf-uWc" secondAttribute="bottom" id="vKB-fW-7Tl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Y49-mf-uWc" id="jmz-yK-50P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="80"/>
+            <point key="canvasLocation" x="-401" y="80"/>
         </scene>
     </scenes>
     <resources>
