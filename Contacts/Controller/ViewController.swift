@@ -9,16 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var tableView: UITableView!
+    var storage: ContactStorageProtocol!
     var contacts: [ContactProtocol] = [] {
         didSet {
             contacts.sort{ $0.title < $1.title }
+            storage.save(contacts)
         }
     }
     
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        storage = ContactStorage()
         loadContacts()
     }
     
@@ -40,12 +43,9 @@ class ViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    // test data
+    // load contacts from storage
     private func loadContacts() {
-        contacts.append(Contact(title: "Саня Техосмотр", phone: "+799912312323"))
-        contacts.append(Contact(title: "Владимир Анатольевич", phone: "+781213342321"))
-        contacts.append(Contact(title: "Сильвестр Сталонович", phone: "+380674975199"))
-        contacts.append(Contact(title: "Шварц Арнольдович", phone: "+380974389524"))
+        contacts = storage.load()
     }
 }
 
@@ -64,7 +64,7 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
     
-    // reusable code
+    // confuguration a reusable cell
     private func configure(_ cell: inout UITableViewCell, for indexPath: IndexPath) {
         var conf = cell.defaultContentConfiguration()
         conf.text = contacts[indexPath.row].title
